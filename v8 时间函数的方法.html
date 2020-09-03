@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<span>{{count}}</span>
+    <hr>
+    <input type="button" value="改变count数值" @click="change_count">
+    <hr>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            count: 66,
+        },
+        methods: {
+            change_count(){
+                this.count--
+            }
+        }
+    })
+</script>
+</body>
+</html>

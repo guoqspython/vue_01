@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="aa">
+    <input type="button" value="提交" @click="hh">
+    <br>
+    <ul>
+        <li v-for="(a,index) in notebook">
+            {{index+1}}--{{a}}
+            <input type="button" value="删除" @click="oo(index)">
+        </li>
+    </ul>
+    <br>
+    <input type="button" value="全部删除" @click="yy">
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            notebook:[],
+            aa:'',
+        },
+        methods:{
+            hh(){
+                this.notebook.push(this.aa)
+                this.aa=''
+            },
+            yy(){
+                this.notebook=[]
+            },
+            oo(index){
+                this.notebook.splice(index,1)
+            }
+        }
+    })
+</script>
+</body>
+</html>

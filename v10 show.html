@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<h1 v-show="false">{{message}}</h1>
+
+    <hr>
+
+    <h2 v-show="isShow">我就是喜欢Vue</h2>
+
+    <hr>
+
+    <input type="button" value="控制标签隐藏" @click="showMsg">
+    <hr>
+<h2 v-show="count>=20">百知教育</h2>
+
+    <input type="button" value="点击" @click="changeCount">
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            message:'上课一定要好好听讲',
+            isShow:true,
+            count:23,
+        },
+        methods:{
+            showMsg(){
+                this.isShow=!this.isShow;
+            },
+            changeCount(){
+                this.count--;
+            }
+        }
+    })
+</script>
+</body>
+</html>

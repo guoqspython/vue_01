@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<h3>{{age}}</h3>
+
+    <hr>
+    <input type="button" value="点击事件v-on绑定事件每次年龄加一" v-on:click="change_age">
+    <hr>
+
+    <input type="button" value="点击事件v-on年龄-1" @click="edit_age">
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            age: 55,
+        },
+        methods:{
+            change_age:function () {
+                this.age++
+            },
+            edit_age:function () {
+                this.age--
+
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
